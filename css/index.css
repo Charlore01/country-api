@@ -186,12 +186,12 @@ header button:hover {
   border: 2px solid hsl(0, 0%, 100%);
 }
 
-.dark-mode {
+.dark-mode, #region-filter {
   background-color: hsl(207, 26%, 17%);
   color: hsl(0, 0%, 100%);
 }
 
-.dark-mode-bg {
+.dark-mode-bg, #region-filter {
   background-color: hsl(209, 23%, 22%) !important;
   color: hsl(0, 0%, 100%) !important;
   border: 2px solid hsl(207, 26%, 17%);

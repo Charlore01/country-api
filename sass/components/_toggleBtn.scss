@@ -24,12 +24,12 @@ header {
   border: 2px solid $white;
 }
 
-.dark-mode {
+.dark-mode, #region-filter {
   background-color: $very-dark-blue-background;
   color: $white;
 }
 
-.dark-mode-bg {
+.dark-mode-bg, #region-filter {
   background-color: $dark-blue !important;
   color: $white !important;
   border: 2px solid $very-dark-blue-background;
