@@ -1,0 +1,22 @@
+// color pallete
+$colors: (
+  "dark-blue": $dark-blue,
+  "very-dark-blue": $very-dark-blue-background,
+  "dark-blue-txt": $very-dark-blue-text,
+  "dark-gray": $dark-gray-input,
+  "very-light-gray": $very-light-gray-background,
+  "white": $white,
+  "black": #000,
+  "red": red,
+) !default;
+
+// to generate color classes
+@each $key, $val in $colors {
+  .text-#{$key} {
+    color: $val;
+  }
+
+  .bg-#{$key} {
+    background-color: $val;
+  }
+}

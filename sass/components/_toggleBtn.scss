@@ -1,0 +1,52 @@
+/* Default Light Mode */
+body {
+  background-color: white;
+  color: black;
+}
+
+header {
+  button {
+    padding: 8px 20px;
+    border-color: $dark-blue;
+
+    &:hover {
+      background-color: $white;
+      border-color: $white;
+      color: $dark-blue;
+      cursor: pointer;
+      box-shadow: 1px 2px 5px $white;
+    }
+  }
+}
+
+.country-card {
+  background-color: $white;
+  border: 2px solid $white;
+}
+
+.dark-mode {
+  background-color: $very-dark-blue-background;
+  color: $white;
+}
+
+.dark-mode-bg {
+  background-color: $dark-blue !important;
+  color: $white !important;
+  border: 2px solid $very-dark-blue-background;
+
+
+}
+
+
+.country-card.dark-mode-bg {
+  background-color: $very-dark-blue-background;
+  color: $very-dark-blue-background;
+  // transition: transform 500ms ease-in;
+
+
+  // &:hover {
+  //   box-shadow: 2px 2px 8px $white;
+  //   transform: translateX(20px);
+  //   cursor: pointer;
+  //  }
+}

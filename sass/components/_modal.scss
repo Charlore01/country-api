@@ -1,0 +1,125 @@
+// Main container for country cards (grid layout)
+#country-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 20px;
+}
+
+// Individual country card
+.country-card {
+  background-color: $white;
+  border-radius: $border-radius;
+  box-shadow: $card-shadow;
+  overflow: hidden;
+  transition: transform $transition-duration ease,
+    box-shadow $transition-duration ease;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+
+  img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: $dark-gray-input;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// Modal-like behavior when the card is clicked
+.country-card.modal-active {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90vw;
+  max-width: 600px;
+  height: 80vh;
+  z-index: $z-index-modal;
+  transform: translate(-50%, -50%) scale(1.1);
+  background-color: $modal-card-bg-color;
+  box-shadow: $modal-card-shadow;
+  overflow-y: auto;
+  transition: transform $transition-duration ease,
+    box-shadow $transition-duration ease;
+
+  // Card content stays within the modal
+  img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: $very-dark-blue-text;
+  }
+}
+
+// Overlay effect (modal backdrop)
+.country-card.modal-active::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $modal-bg-color;
+  z-index: $z-index-overlay;
+  transition: background-color $transition-duration ease;
+}
+
+// Dark mode support
+body {
+  &.dark-mode {
+    background-color: $very-dark-blue-background;
+    color: $white;
+
+    .country-card {
+      background-color: $dark-blue;
+
+      h2,
+      p {
+        color: $white;
+      }
+    }
+
+    .country-card.modal-active {
+      background-color: $dark-blue;
+      box-shadow: $modal-card-shadow;
+    }
+  }
+}
+
+.country-card {
+  transition: all 0.3s ease;
+}
+
+//   creates the bigger size on click
+.country-card.active {
+  transform: scale(1.65); /* Make the card bigger */
+  position: relative;
+  z-index: 10;
+  transition: all 0.3s ease;
+}

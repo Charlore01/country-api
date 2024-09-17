@@ -1,0 +1,70 @@
+// Variables
+$grid-gutter: 20px;
+$breakpoints: (
+  "xs": 480px,
+  // Mobile
+  "sm": 768px,
+  // Tablets
+  "md": 1024px,
+  // Small desktops
+  "lg": 1440px // Large desktops
+);
+
+// Mixin for the responsive grid
+@mixin responsive-grid($columns) {
+  display: grid;
+  grid-gap: $grid-gutter;
+
+  // Base grid settings for mobile (1 column)
+  grid-template-columns: repeat(1, 1fr);
+
+  // Loop through breakpoints and adjust columns
+  @each $name, $breakpoint in $breakpoints {
+    @if $name =="xs" {
+      // For xs, we don't need media query since it's default.
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    @else {
+      @media (min-width: $breakpoint) {
+        grid-template-columns: repeat($columns, 1fr);
+      }
+    }
+  }
+}
+
+// Applying the mixin to #country-list
+#country-list {
+  @include responsive-grid(4); // Default columns for larger screens
+
+  @media (min-width: map-get($breakpoints, "sm")) {
+    grid-template-columns: repeat(2, 1fr); // 2 columns for small devices
+  }
+
+  @media (min-width: map-get($breakpoints, "md")) {
+    grid-template-columns: repeat(3, 1fr); // 3 columns for medium devices
+  }
+
+  @media (min-width: map-get($breakpoints, "lg")) {
+    grid-template-columns: repeat(4, 1fr); // 4 columns for large desktops
+  }
+}
+
+// Style for grid items (country cards)
+.country-card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  // Full width for mobile screens
+  width: 100%;
+
+  img.country-flag {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,45 @@
+// Dark Mode Colors
+$dark-blue: hsl(209, 23%, 22%) !default;
+$very-dark-blue-background: hsl(207, 26%, 17%) !default;
+
+// Light Mode Colors
+$very-dark-blue-text: hsl(200, 15%, 8%) !default;
+$dark-gray-input: hsl(0, 0%, 52%) !default;
+$very-light-gray-background: hsl(0, 0%, 98%) !default;
+$white: hsl(0, 0%, 100%) !default;
+
+// Modal and Card Styling
+$modal-bg-color: rgba(0, 0, 0, 0.5);
+$modal-card-bg-color: $white;
+$card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+$modal-card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+$border-radius: 8px;
+$z-index-modal: 999;
+$z-index-overlay: 998;
+$transition-duration: 0.4s;
+
+// Variables for easier color management
+$primary-color: #ff5733 !default;
+$primary-rgba: (255, 87, 51) !default;
+
+// spacing
+$base-padding: 0.75rem !default;
+$base-margin: 0.75rem !default;
+
+// borders
+$base-border-thickness: 1px !default;
+$base-border-radius: 20px !default;
+
+// box-shadow
+$base-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1) !default;
+
+// font sizes
+$base-font-size: 16px !default;
+$font-size-sm: $base-font-size * 0.75 !default;
+$font-size-md: $base-font-size * 0.93 !default;
+$font-size-lg: $base-font-size * 1.5 !default;
+$font-size-xl: $base-font-size * 2 !default;
+$font-size-xxl: $base-font-size * 3 !default;
+
+// width
+$base-width: 100%;

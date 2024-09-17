@@ -1,0 +1,25 @@
+// font family
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+/* reset styles */
+* {
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+  font-family: Nunito Sans;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  font-size: 13px;
+  // width: $base-width;
+  // height: $base-width;
+  // display: flex;
+}
+
+header {
+  align-items: center;
+}

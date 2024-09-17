@@ -1,0 +1,33 @@
+#country-list {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  max-height: auto;
+  // margin-left: -16px;
+
+}
+
+.country-flag {
+  max-width: 100%;
+  height: auto;
+  width: auto; // Optional: limit max width for larger flags
+  display: block;
+  margin-bottom: 10px;
+  // margin-left: 70px;
+}
+
+.country-card {
+  background-color: $white;
+  // border-color: $;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 70%;
+  transition: transform 500ms ease-in;
+
+
+  &:hover {
+    box-shadow: 2px 2px 8px $very-dark-blue-background;
+    transform: translateX(20px);
+    cursor: pointer;
+  }
+}
